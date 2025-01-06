@@ -1,0 +1,240 @@
+/* ========================= */
+/* Штатные стили из сниппета */
+/* ========================= */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.app {
+  text-align: center;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 0.9rem;
+}
+
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+button:hover:enabled {
+  background: #0056b3;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  height: 10px;
+}
+
+.progress {
+  height: 100%;
+  background: #007bff;
+  border-radius: 4px;
+}
+
+form {
+  text-align: left;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+label.selected {
+  background: #f0f0f0;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+.question-counter {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.question-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.start_title {
+  font-size: 1.6rem;
+}
+
+.start_images {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 6px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Пример анимации fadeIn (упомянута в .app) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ======================== */
+/* Стили для наших компонентов (если нужно) */
+/* ======================== */
+
+/* Основной контейнер для контента теста */
+.quiz-container {
+  /* Можно при желании адаптировать стили под .app */
+  text-align: left; /* или center, как вам удобнее */
+  max-width: 400px;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Прогресс-бар, который мы используем вместо .progress-bar/.progress */
+.progress-bar-wrapper {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  height: 10px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #007bff;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Анимации "slide" при переключении вопросов */
+@keyframes slideForward {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideBackward {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.question-slide.slide-forward {
+  animation: slideForward 0.4s ease-in-out;
+}
+.question-slide.slide-backward {
+  animation: slideBackward 0.4s ease-in-out;
+}
+
+/* Стили для вопроса и вариантов */
+.question-block {
+  margin: 20px 0;
+}
+
+.question-text {
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option-item {
+  margin: 10px 0;
+}
+
+/* Кнопки с вариантами ответа */
+.option-button {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000000d2;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.option-button:hover {
+  background-color: #0056b3 !important;
+  color: #fff
+}
+
+.option-button.selected {
+  background-color: #0056b3;
+  color: #fff
+}
+
+/* Кнопки "Назад" и "Вперёд" внизу */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Intro Screen, Persona Screen и т.д. (по вкусу) */
+.intro-screen, .persona-screen {
+  /* Можно использовать класс .app/.quiz-container
+     или оставить так. Добавьте стили, если нужно. */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Если у вас есть класс .intro-screen img, .persona-screen h2, и т.д. —
+   можете добавить стили при необходимости. */
