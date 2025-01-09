@@ -229,6 +229,10 @@ input[type="radio"] {
   margin-top: 20px;
 }
 
+.intro-screen {
+  text-align: center;
+}
+
 /* Intro Screen, Persona Screen и т.д. (по вкусу) */
 .intro-screen, .persona-screen {
   /* Можно использовать класс .app/.quiz-container

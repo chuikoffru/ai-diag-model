@@ -19,6 +19,15 @@ const PersonaScreen: React.FC<PersonaScreenProps> = ({ onSelectPersona }) => {
       <p>Выбери, к какой группе ты относишься:</p>
 
       <div className="persona-options">
+      <label>
+          <input
+            type="radio"
+            name="persona"
+            value="manager"
+            onChange={(e) => setSelected(e.target.value)}
+          />
+          Руководитель
+        </label>
         <label>
           <input
             type="radio"
@@ -26,7 +35,7 @@ const PersonaScreen: React.FC<PersonaScreenProps> = ({ onSelectPersona }) => {
             value="it"
             onChange={(e) => setSelected(e.target.value)}
           />
-          IT-специалист
+          IT-специалист (в образовании)
         </label>
         <label>
           <input
@@ -46,15 +55,7 @@ const PersonaScreen: React.FC<PersonaScreenProps> = ({ onSelectPersona }) => {
           />
           Школьник
         </label>
-        <label>
-          <input
-            type="radio"
-            name="persona"
-            value="manager"
-            onChange={(e) => setSelected(e.target.value)}
-          />
-          Руководитель
-        </label>
+        
       </div>
 
       <button onClick={handleSubmit} disabled={!selected}>

@@ -58,12 +58,13 @@ interface QuizProps {
           mostFrequentLetter = letter
         }
       }
-      const resultText = quizData.resultsMap[mostFrequentLetter] || ''
+      const result = quizData.resultsMap[mostFrequentLetter] || ''
   
       return (
         <div className="quiz-container">
           <h2>Результат</h2>
-          <p style={{ whiteSpace: 'pre-line' }}>{resultText}</p>
+          <img src={result.image} width={300} />
+          <p style={{ whiteSpace: 'pre-line' }}>{result.desc}</p>
           <button onClick={restart}>Пройти заново</button>
         </div>
       )
